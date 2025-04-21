@@ -1,0 +1,33 @@
+import random
+print("------------------------------------------")
+print('Number guessing game in Python')
+print("------------------------------------------")
+from ast import Break
+try:
+  lower_bound = int(input('Please Enter lower bound Number: '))
+  higher_bound = int(input('Please Enter higher bound Number: '))
+  target = random.randint(lower_bound,higher_bound)
+  print("You have 7 chances to guess the integer")
+  print(target)
+  tries = 7
+  while True:
+    tries= tries -1
+    print(f"You have {tries} tries left")
+    if tries == 0:
+      print("------------------------------------------")
+      print("G A M E    O V E R !")
+      print("------------------------------------------")
+      print('You used all the Tries')
+      print("____________________________________________________________")
+      break
+    guess_a_number = int(input('Guess a Number: '))
+
+    if guess_a_number < target:
+      print("You guessed too small!")
+    elif guess_a_number > target:
+      print("You guessed too high!")
+    else:
+        print(f"congratulations you got {target} in {tries} Tries")
+        break
+except ValueError:
+        print("Oops!  That was no valid number.  Try again...")
